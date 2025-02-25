@@ -58,13 +58,22 @@
                             <label for="title" class="form-label">Title</label>
                             <input type="text" class="form-control" id="title" name="title" placeholder="Title here">
                           </div>
+                          <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                          </div>
                           <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                           </div>
-                        <div class="mb-3">
-                            <label for="image" class="form-label">Product Image</label>
-                            <input class="form-control" type="file" id="image">
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Quantity</span>
+                            <input type="number" class="form-control" placeholder="0" name="quantity">
+                          </div>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" name="price">
+                            <span class="input-group-text">.00</span>
                           </div>
                           <div class="col-auto">
                             <button type="submit" class="btn btn-primary mb-3">Submit</button>

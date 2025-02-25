@@ -4,11 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Midterm TT4 - Simulation</title>
+        <title>Product Cards</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     </head>
 
     <body>
-
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
@@ -51,36 +54,48 @@
                 </nav>
                 <!-- Page content-->
                 <div id="content" class="container-fluid p-5">
-                    <h1 class="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                        non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
-                    <div class="alert alert-primary" role="alert">
-                        Here's an example of how to assemble your products. Pay close attention to all the details,
-                        especially the dependencies, as they are crucial for the proper setup. Although this is not
-                        described in the documentation, it would show attention to detail if you remove this example
-                        from
-                        the homepage after use. You can simply comment it out. Don’t forget to do the same for the
-                        JavaScript code to avoid any errors due to missing dependencies.
-                    </div>
-
-                    <div class="alert alert-warning" role="alert">
-                        Create your own layout, don't just copy this example, use your creativity.
-                    </div>
-
-                    <h2>Product list example</h2>
-                    <div id="products" class="d-flex gap-2">
-                        <!-- Products -->
-                    </div>
+                    <div class="row" id="product-container"></div>
                 </div>
             </div>
         </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const productContainer = document.getElementById("product-container");
+
+            for (let i = 1; i <= 12; i++) {
+                const productCard = `
+            <div class="col-md-4 mb-4">
+                <div class="card" style="max-width: 320px">
+                    <img src="assets/images/images (${i}).jpg" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product ${i}</h5>
+                        <p class="card-text">Short description for product ${i}.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0">$129.99</span>
+                            <div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                                <i class="bi bi-star text-muted"></i>
+                                <small class="text-muted">(4.${i % 10})</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+            </div>`;
+
+                productContainer.innerHTML += productCard;
+            }
+        </script>
     </body>
 
 </html>

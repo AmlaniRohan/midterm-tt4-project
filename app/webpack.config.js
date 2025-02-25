@@ -38,9 +38,9 @@ module.exports = {
       {
         test: /\.(png|jpg|gif)$/,
         type: "asset/resource", // Para copiar arquivos de imagem
-        generator: {
-          filename: 'assets/images/[name][hash][ext][query]', // Colocando as imagens dentro de assets/images/
-        },
+        // generator: {
+        //   filename: 'assets/images/[name][hash][ext][query]', // Colocando as imagens dentro de assets/images/
+        // },
       },
       {
         test: /\.(woff(2)?|eot|ttf)$/,
@@ -60,11 +60,11 @@ module.exports = {
       chunks: ["global", "index"],
       filename: "index.html",
     }),
-    // new HtmlWebpackPlugin({
-    //   template: "./list-products.html",
-    //   chunks: ["listProducts", "global"],
-    //   filename: "list-products.html",
-    // }),
+    new HtmlWebpackPlugin({
+      template: "./list-products.html",
+      chunks: ["listProducts", "global"],
+      filename: "list-products.html",
+    }),
     // new HtmlWebpackPlugin({
     //   template: "./add-products.html",
     //   chunks: ["addProducts", "global"],
